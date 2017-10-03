@@ -1,5 +1,10 @@
 recursive-include src *
 
-include *
+include *.rst
+include setup.py
+include requirements.txt
+include Makefile
+include .coveragerc
+include tox.ini
 
 global-exclude *.pyc
