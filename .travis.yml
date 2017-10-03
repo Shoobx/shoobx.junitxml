@@ -1,0 +1,14 @@
+language: python
+sudo: false
+python:
+  - 2.7
+  - 3.6
+  - pypy
+install:
+  - pip install tox-travis coveralls
+script:
+  - tox
+notifications:
+    email: false
+after_success:
+  - coveralls

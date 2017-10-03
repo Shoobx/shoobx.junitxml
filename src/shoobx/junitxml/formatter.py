@@ -10,6 +10,7 @@ import doctest
 import lxml.etree
 import os
 import os.path
+import six
 import socket
 import traceback
 from zope.testrunner.find import StartUpFailure
@@ -95,7 +96,7 @@ def filename_to_suite_name_parts(filename):
 
 
 def parse_layer(test):
-    if isinstance(test, basestring):
+    if isinstance(test, six.string_types):
         parts = test.split('.')
         klass = '.'.join(parts[:-1])
         return parts[-1], klass
@@ -177,7 +178,7 @@ class XMLOutputFormattingWrapper(object):
 
     def test_skipped(self, test, reason):
         self._record(test, 0, extraData=dict(skipped=reason))
-        return self.delegate.test_success(test, reason)
+        return self.delegate.test_skipped(test, reason)
 
     def import_errors(self, import_errors):
         if import_errors:

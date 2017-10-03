@@ -24,8 +24,8 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
     ],
     keywords='jenkins junit xml zope.testing',
     author='Shoobx, Inc. and Martin Aspelli',
@@ -39,7 +39,7 @@ setup(
     install_requires=[
         'lxml',
         'setuptools',
-        'zope.testing',
         'zope.testrunner',
     ],
+    test_suite='shoobx.junitxml',
 )

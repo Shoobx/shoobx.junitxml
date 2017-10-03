@@ -1,3 +1,10 @@
+.coverage
+.tox/
+coverage.xml
+htmlcov/
+ve/
+
+
 src/*.egg-info
 
 *.pyc
