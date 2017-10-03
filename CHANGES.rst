@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.1.1 (unreleased)
+0.1.1 (2017-10-03)
 ------------------
 
 - Added some basic tests.
