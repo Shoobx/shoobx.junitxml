@@ -20,22 +20,22 @@ Usage
 In order to install your own features, you have to customize the main
 `Runner` class a bit. Here is what we do at Shoobx:
 
-```
-from shoobx.junitxml import feature
-feature.JUnitXMLSupport.install_options()
+::
 
-class Runner(zope.testrunner.runner.Runner):
+  from shoobx.junitxml import feature
+  feature.JUnitXMLSupport.install_options()
 
-    def configure(self):
-        super(Runner, self).configure()
-        self.features.append(feature.JUnitXMLSupport())
+  class Runner(zope.testrunner.runner.Runner):
 
-zope.testrunner.runner.Runner = Runner
-```
+      def configure(self):
+          super(Runner, self).configure()
+          self.features.append(feature.JUnitXMLSupport())
+
+  zope.testrunner.runner.Runner = Runner
+
 
 
 Code repository
 ===============
 
 https://github.com/shoobx/shoobx.junitxml
-
