@@ -1,6 +1,18 @@
 Introduction
 ============
 
+.. image:: https://travis-ci.org/Shoobx/shoobx.junitxml.png?branch=master
+   :target: https://travis-ci.org/Shoobx/shoobx.junitxml
+
+.. image:: https://coveralls.io/repos/github/Shoobx/shoobx.junitxml/badge.svg?branch=master
+   :target: https://coveralls.io/github/Shoobx/shoobx.junitxml?branch=master
+
+.. image:: https://img.shields.io/pypi/v/shoobx.junitxml.svg
+   :target: https://pypi.python.org/pypi/shoobx.junitxml
+
+.. image:: https://img.shields.io/pypi/pyversions/shoobx.junitxml.svg
+   :target: https://pypi.python.org/pypi/shoobx.junitxml/
+
 This package provides a `zope.testrunner` feature that stores the test
 results in a JUnit-compatible XML file. This file can be consumed by
 Jenkins and other tools to generate test reports.
