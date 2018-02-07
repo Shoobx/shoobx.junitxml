@@ -315,5 +315,5 @@ class XMLOutputFormattingWrapper(object):
         systemErrNode = lxml.etree.SubElement(testSuiteNode, 'system-err')
 
         # Write file
-        with open(self.outputPath, 'w') as file:
+        with open(self.outputPath, 'wb') as file:
             file.write(lxml.etree.tostring(testSuiteNode, pretty_print=True))
