@@ -5,6 +5,7 @@
 ###############################################################################
 """Shoobx JUnit XML Output Formatter
 """
+import codecs
 import datetime
 import doctest
 import lxml.etree
@@ -150,6 +151,27 @@ def parse_unittest(test):
     return testName, testClassName
 
 
+def addNodeText(node, text):
+    """Appends text to an XML node.
+    If text contains binary data that are not supported by lxml,
+    sets error message and base64 encoded representation of the text.
+    """
+    try:
+        node.text = (node.text or "") + text
+        return
+    except ValueError:
+        pass
+    if not isinstance(text, six.binary_type):
+        text = text.encode('utf-8')
+    node.text = (
+        (node.text and node.text + "\n" or "") +
+        "Text contains characters illegal in XML.\n" +
+        "Here's Base64 representation:\n" +
+        "="*60 + "\n" +
+        codecs.encode(text, 'base64').decode('utf-8') +
+        "="*60)
+
+
 class XMLOutputFormattingWrapper(object):
     """Output formatter which delegates to another formatter for all
     operations, but also prepares an element tree of test output.
@@ -285,7 +307,10 @@ class XMLOutputFormattingWrapper(object):
                     'message': errorMessage.split('\n')[0],
                     'type': str(excType)
                 })
-                errorNode.text = errorMessage + '\n\n' + stackTrace
+                addNodeText(errorNode, errorMessage)
+                if errorNode.text:
+                    errorNode.text = errorNode.text + '\n\n'
+                addNodeText(errorNode, stackTrace)
 
             if testCase.failure:
                 failureNode = lxml.etree.SubElement(testCaseNode, 'failure')
@@ -303,12 +328,15 @@ class XMLOutputFormattingWrapper(object):
                     'message': errorMessage.split('\n')[0],
                     'type': str(excType)
                 })
-                failureNode.text = errorMessage + '\n\n' + stackTrace
+                addNodeText(failureNode, errorMessage)
+                if failureNode.text:
+                    failureNode.text = failureNode.text + '\n\n'
+                addNodeText(failureNode, stackTrace)
 
             if testCase.extraData is not None:
                 for key, val in testCase.extraData.items():
                     newNode = lxml.etree.SubElement(testCaseNode, key)
-                    newNode.text = val
+                    addNodeText(newNode, val)
 
         # XXX: We don't have a good way to capture these yet
         systemOutNode = lxml.etree.SubElement(testSuiteNode, 'system-out')
