@@ -2,10 +2,10 @@ Changelog
 =========
 
 
-0.1.3 (unreleased)
+0.1.3 (2018-02-09)
 ------------------
 
-- No changes yet.
+- Bugfix: When test failure has binary data, record a Base64 representation of the failure
 
 
 0.1.2 (2018-02-07)
