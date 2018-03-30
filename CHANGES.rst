@@ -2,10 +2,11 @@ Changelog
 =========
 
 
-0.1.4 (unreleased)
+0.1.4 (2018-03-30)
 ------------------
 
-- Nothing changed yet
+- Record doctest cases in modules where test cases are defined,
+  instead of putting them all in 'doctest' module.
 
 
 0.1.3 (2018-02-09)
