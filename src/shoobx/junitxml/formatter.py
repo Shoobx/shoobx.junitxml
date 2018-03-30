@@ -120,8 +120,11 @@ def parse_doc_test_case(test):
         return None, None
 
     testDottedNameParts = test._dt_test.name.split('.')
-    testClassName = get_test_class_name(test)
     testName = testDottedNameParts[-1]
+    # Record test class as module.where.test.is.defined.DocTestCase
+    testClassName = '.'.join(
+        testDottedNameParts[:-1] +
+        [test.__class__.__name__])
     return testName, testClassName
 
 
