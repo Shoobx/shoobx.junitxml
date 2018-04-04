@@ -30,7 +30,7 @@ setup(
     keywords='jenkins junit xml zope.testing',
     author='Shoobx, Inc. and Martin Aspelli',
     author_email='dev@shoobx.com',
-    url='http://pypi.python.org/pypi/shoobx.junitxml',
+    url='https://github.com/shoobx/shoobx.junitxml',
     license='ZPL 2.1',
     packages=find_packages('src'),
     package_dir={'': 'src'},
