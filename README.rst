@@ -13,6 +13,10 @@ Introduction
 .. image:: https://img.shields.io/pypi/pyversions/shoobx.junitxml.svg
    :target: https://pypi.python.org/pypi/shoobx.junitxml/
 
+.. image:: https://api.codeclimate.com/v1/badges/e87bfa9e26534e0a0c87/maintainability
+   :target: https://codeclimate.com/github/Shoobx/shoobx.junitxml/maintainability
+   :alt: Maintainability
+
 This package provides a `zope.testrunner` feature that stores the test
 results in a JUnit-compatible XML file. This file can be consumed by
 Jenkins and other tools to generate test reports.
