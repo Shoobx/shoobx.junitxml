@@ -1,7 +1,7 @@
 # shoobx.junitxml
 -e .
 
-coverage == 4.2
-lxml == 4.0.0
+coverage == 4.5.1
+lxml == 4.2.5
 mock == 2.0.0
-zope.testrunner == 4.5.1
+zope.testrunner == 4.9

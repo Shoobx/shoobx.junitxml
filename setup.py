@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='shoobx.junitxml',
-    version='0.1.5.dev0',
+    version='0.2.0.dev0',
     description=
         'A zope.testrunner output formatter & feature to output JUnit XML.',
     long_description=(
@@ -26,6 +26,7 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     keywords='jenkins junit xml zope.testing',
     author='Shoobx, Inc. and Martin Aspelli',

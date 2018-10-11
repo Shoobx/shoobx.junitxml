@@ -2,10 +2,13 @@ Changelog
 =========
 
 
-0.1.5 (unreleased)
+0.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet
+- Add support for Python 3.7
+
+- Add support for the latest `zope.testrunner`, which switches from `optparse`
+  to `argparse`.
 
 
 0.1.4 (2018-03-30)
@@ -18,7 +21,8 @@ Changelog
 0.1.3 (2018-02-09)
 ------------------
 
-- Bugfix: When test failure has binary data, record a Base64 representation of the failure
+- Bugfix: When test failure has binary data, record a Base64 representation of
+  the failure
 
 
 0.1.2 (2018-02-07)

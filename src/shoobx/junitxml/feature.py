@@ -23,15 +23,14 @@ class JUnitXMLSupport(zope.testrunner.feature.Feature):
         if getattr(cls, '_options_installed', False):
             return
         cls._options_installed = True
-        opts = optparse.OptionGroup(
-            zope.testrunner.options.parser,
+
+        group = zope.testrunner.options.parser.add_argument_group(
             "JUnit",
             """JUnit XML options.""")
-        opts.add_option(
+        group.add_argument(
             '--xml',
             dest='xml_path',
             help="""Store XML output (one file) in the specified file path.""")
-        zope.testrunner.options.parser.add_option_group(opts)
 
     def report(self):
         if not self.runner.options.xml_path:
