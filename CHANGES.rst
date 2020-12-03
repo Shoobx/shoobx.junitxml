@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.1 (unreleased)
+0.2.1 (2020-12-03)
 ------------------
 
 - Support for latest zope.testrunner and other latest dependencies
