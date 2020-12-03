@@ -5,7 +5,11 @@ Changelog
 0.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Support for latest zope.testrunner and other latest dependencies
+- Added missing stderr and stdout params to test_failure and test_error
+  methods of XMLOutputFormattingWrapper
+  (prevented xml report file generation in zopetestrunner >= 5.1)
+- dropped support for python 2, updated support for 3.X
 
 
 0.2.0 (2018-10-10)
