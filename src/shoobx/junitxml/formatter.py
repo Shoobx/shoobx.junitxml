@@ -189,13 +189,15 @@ class XMLOutputFormattingWrapper(object):
     def __getattr__(self, name):
         return getattr(self.delegate, name)
 
-    def test_failure(self, test, seconds, exc_info):
+    def test_failure(self, test, seconds, exc_info, stdout=None, stderr=None):
         self._record(test, seconds, failure=exc_info)
-        return self.delegate.test_failure(test, seconds, exc_info)
+        return self.delegate.test_failure(test, seconds, exc_info,
+                                          stdout=stdout, stderr=stderr)
 
-    def test_error(self, test, seconds, exc_info):
+    def test_error(self, test, seconds, exc_info, stdout=None, stderr=None):
         self._record(test, seconds, error=exc_info)
-        return self.delegate.test_error(test, seconds, exc_info)
+        return self.delegate.test_error(test, seconds, exc_info,
+                                          stdout=stdout, stderr=stderr)
 
     def test_success(self, test, seconds):
         self._record(test, seconds)

@@ -7,6 +7,7 @@
 """
 import mock
 import unittest
+import sys
 
 from shoobx.junitxml import formatter
 
@@ -30,7 +31,9 @@ class XMLOutputFormattingWrapperTest(unittest.TestCase):
 
     def test_test_failure(self):
         exc_info = mock.Mock()
-        self.formatter.test_failure(SomeTest(), 0.088, exc_info)
+
+        self.formatter.test_failure(SomeTest(), 0.088, exc_info,
+                                    stderr=sys.stderr, stdout=sys.stdout)
         self.assertTrue(
             self.delegate.test_failure.called)
         self.assertEqual(
@@ -40,7 +43,8 @@ class XMLOutputFormattingWrapperTest(unittest.TestCase):
 
     def test_test_error(self):
         exc_info = mock.Mock()
-        self.formatter.test_error(SomeTest(), 0.088, exc_info)
+        self.formatter.test_error(SomeTest(), 0.088, exc_info,
+                                  stderr=sys.stderr, stdout=sys.stdout)
         self.assertTrue(
             self.delegate.test_error.called)
         self.assertEqual(
