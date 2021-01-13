@@ -39,17 +39,20 @@ In order to install your own features, you have to customize the main
 ::
 
   from shoobx.junitxml import feature
+  import zope.testrunner.runner
+
   feature.JUnitXMLSupport.install_options()
 
   class Runner(zope.testrunner.runner.Runner):
 
       def configure(self):
           super(Runner, self).configure()
-          self.features.append(feature.JUnitXMLSupport())
+          self.features.append(feature.JUnitXMLSupport(self))
 
   zope.testrunner.runner.Runner = Runner
 
-
+Call the test runner with the argument `--xml=junit.xml` to specify the name
+of the generated JUnit file.
 
 Code repository
 ===============
