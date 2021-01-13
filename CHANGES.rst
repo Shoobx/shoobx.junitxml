@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.2 (unreleased)
+0.2.2 (2021-01-13)
 ------------------
 
 - Fixed documentation.
