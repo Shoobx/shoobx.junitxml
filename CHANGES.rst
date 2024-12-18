@@ -2,10 +2,11 @@ Changelog
 =========
 
 
-0.2.3 (unreleased)
+0.3.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Rename command line option `--xml`` to ``--junitxml`` since zope.testrunner 6.3.0
+  added the same option and there's a conlict
 
 
 0.2.2 (2021-01-13)

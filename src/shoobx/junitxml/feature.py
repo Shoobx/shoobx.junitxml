@@ -5,7 +5,6 @@
 ###############################################################################
 """Shoobx JUnit XML Output feature
 """
-import optparse
 import zope.testrunner.feature
 import zope.testrunner.options
 
@@ -28,7 +27,7 @@ class JUnitXMLSupport(zope.testrunner.feature.Feature):
             "JUnit",
             """JUnit XML options.""")
         group.add_argument(
-            '--xml',
+            '--junitxml',
             dest='xml_path',
             help="""Store XML output (one file) in the specified file path.""")
 
