@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='shoobx.junitxml',
-    version='0.3.0',
+    version='0.3.1.dev0',
     description=
         'A zope.testrunner output formatter & feature to output JUnit XML.',
     long_description=(
